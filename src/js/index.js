@@ -9,7 +9,7 @@ import "bootstrap";
 import "../styles/index.scss";
 
 //import your own components
-import { Counter } from "./counter.js";
+import { Counter } from "./component/counter.js";
 
 //render your react application
 let counter = 0;
