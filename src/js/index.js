@@ -9,7 +9,27 @@ import "bootstrap";
 import "../styles/index.scss";
 
 //import your own components
-import { Home } from "./component/home.js";
+import { Counter } from "./counter.js";
 
 //render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+let counter = 0;
+let seconds = "";
+
+let myTimer = () => {
+	counter += 1;
+	seconds = "000000" + counter;
+	seconds = seconds.slice(-6);
+
+	ReactDOM.render(
+		<Counter
+			char1={seconds.charAt(0)}
+			char2={seconds.charAt(1)}
+			char3={seconds.charAt(2)}
+			char4={seconds.charAt(3)}
+			char5={seconds.charAt(4)}
+			char6={seconds.charAt(5)}
+		/>,
+		document.querySelector("#app")
+	);
+};
+setInterval(myTimer, 1000);
